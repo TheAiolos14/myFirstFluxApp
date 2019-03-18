@@ -16,11 +16,11 @@ class AudienceList extends React.Component {
 		this.setState({ audiences: AudienceStore.getAllAudience() });
 	}
 
-	componentWillTotal() {
+	componentWillMount() {
 		AudienceStore.addChangeListener(this._onChange);
 	}
 
-	componentWillUntotal() {
+	componentWillUnmount() {
 		AudienceStore.removeChangeListener(this._onChange);
 	}
 
